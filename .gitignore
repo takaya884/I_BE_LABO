@@ -1,0 +1,14 @@
+node_modules
+.next
+.env
+.env.local
+.DS_Store
+next-env.d.ts
+*.tsbuildinfo
+
+# Claude Code
+.claude/
+
+# Supabase local artifacts
+supabase/.branches/
+supabase/.temp/

@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fbf7f4;
+  --foreground: #2a211a;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition
+           active:translate-y-px disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-lg {
+    @apply px-6 py-3.5 text-base rounded-xl;
+  }
+  .btn-primary {
+    @apply btn text-white shadow-soft
+           bg-gradient-to-r from-accent-600 to-accent-500
+           hover:from-accent-700 hover:to-accent-600
+           focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply btn border border-brand-200 bg-white text-brand-900 shadow-soft
+           hover:border-brand-300 hover:bg-brand-50;
+  }
+  .btn-ghost {
+    @apply btn text-brand-700 hover:bg-brand-100/70;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white shadow-soft hover:bg-red-500;
+  }
+  .input {
+    @apply block w-full rounded-lg border border-brand-200 bg-white px-3.5 py-2.5 text-sm shadow-sm
+           placeholder:text-brand-300
+           focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/30;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-brand-700;
+  }
+  .card {
+    @apply rounded-xl border border-brand-100 bg-white shadow-soft;
+  }
+  .table {
+    @apply w-full text-sm;
+  }
+  .table th {
+    @apply whitespace-nowrap border-b border-brand-100 bg-brand-50/60 px-3 py-2.5 text-left font-semibold text-brand-700;
+  }
+  .table td {
+    @apply border-b border-brand-100 px-3 py-2.5 align-middle;
+  }
+  .page-header {
+    @apply flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between;
+  }
+  .page-title {
+    @apply text-xl font-bold tracking-tight text-brand-900 sm:text-2xl;
+  }
+  .page-subtitle {
+    @apply text-sm text-brand-500;
+  }
+  .empty {
+    @apply rounded-lg border border-dashed border-brand-200 bg-brand-50/50 px-4 py-8 text-center text-sm text-brand-500;
+  }
+  .mobile-card {
+    @apply card flex flex-col gap-2 p-4;
+  }
+  .mobile-card-row {
+    @apply flex items-center justify-between gap-3 text-sm;
+  }
+  .mobile-card-label {
+    @apply text-xs font-medium uppercase tracking-wider text-brand-500;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .auth-bg {
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(20, 160, 133, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 110% 110%, rgba(224, 162, 58, 0.18), transparent 60%),
+      linear-gradient(180deg, #fbf7f4 0%, #f1ebe5 100%);
+  }
+}
